@@ -14,7 +14,7 @@
         <input type="range" min="0" max="255" value="0" onchange ="updatedevice(this.value)">
         <script type="text/javascript" src="https://cloud.boltiot.com/static/js/boltCommands.js"></script>
         <script>
-            setKey('{{ApiKey}}','{{Name}}');
+            setKey('{{ApiKey}}','{{Name}}');  // Replace with Your Api Key and Device ID
             function updatedevice(text)
             {
                 text = parseInt(text);
