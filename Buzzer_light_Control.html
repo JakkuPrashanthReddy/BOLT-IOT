@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DeviceController</title>
+</head>
+<body>
+    <center>
+        <h1 style="color: red;background-color: yellow;">Welcome to Buzzer/Light Controller Via BOLT cloud</h1>
+        <h1 style="color:red;background-color: black;">You Can Enter Values Between 0-255</h1>
+        <span style="color: blue;background-color: yellow; font-size:100px;">
+            <p id="Paragraph">0</p>
+        </span>
+        <p style="color: darkred; font: 1em sans-serif; font-size: larger; font-weight: bolder;" >Move the Slider and Observe Your Device</p>
+        <input type="range" min="0" max="255" value="0" onchange ="updatedevice(this.value)">
+        <script type="text/javascript" src="https://cloud.boltiot.com/static/js/boltCommands.js"></script>
+        <script>
+            setKey('{{ApiKey}}','{{Name}}');
+            function updatedevice(text)
+            {
+                text = parseInt(text);
+                document.getElementById("Paragraph").innerHTML=text;
+                analogWrite(0,text);
+            }
+        </script>
+    </center> 
+</body>
+</html>
